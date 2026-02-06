@@ -6,7 +6,7 @@ interface EventCardProps {
   desc: string;
   link: string;
 }
-
+//preview deployment : true
 const EventCard: React.FC<EventCardProps> = ({ title, image, desc, link }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const maxLength = 150;
@@ -47,7 +47,6 @@ const EventCard: React.FC<EventCardProps> = ({ title, image, desc, link }) => {
           {displayText}
           {shouldTruncate && !isExpanded && '...'}
         </p>
-        
         {/* Read More / Read Less Button */}
         {shouldTruncate && (
           <button
