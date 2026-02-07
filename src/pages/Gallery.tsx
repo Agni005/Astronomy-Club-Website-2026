@@ -1,5 +1,5 @@
 import StarField from "../components/common/StarField";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight} from "lucide-react";
 import { useState, useEffect } from "react";
 
 const images: string[] = []
