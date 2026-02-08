@@ -1,5 +1,6 @@
-import { motion } from "framer-motion"
-import { Link } from "react-router-dom"
+import {useState, useEffect} from 'react';
+import { motion } from 7"framer-motion";
+import { Link } from "react-router-dom";
 import ParticleEffect from "../Animations/ParticleEffect.jsx";
 
 
