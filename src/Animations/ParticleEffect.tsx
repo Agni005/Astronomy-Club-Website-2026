@@ -1,85 +1,68 @@
 import { useCallback } from "react";
 import Particles from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-import { Engine, Container } from "@tsparticles/engine";
+import type { Engine, Container } from "@tsparticles/engine";
 
-
-const ParticleEffect: React.FC= () => {
-    const particlesInit = useCallback(async (engine:Engine) => {
-        console.log(engine);
+const ParticleEffect: React.FC = () => {
+    const particlesInit = useCallback(async (engine: Engine) => {
         await loadSlim(engine);
     }, []);
 
-    const particlesLoaded = useCallback(async (container:Container) => {
-        await console.log(container);
+    const particlesLoaded = useCallback(async (container?: Container) => {
+        console.log(container);
     }, []);
+
     return (
-        <>
-            <Particles
-                id="tsparticles"
-                init={particlesInit}
-                loaded={particlesLoaded}
-                options={{
-                    "fullScreen": {
-                        "enable": false,
-                        "zIndex": -1,
-
-                    },
-                    fpsLimit: 120,
-
-                    interactivity: {
-                        events: {
-                            resize: {
-                                enable : true,
-                            },
-                        },
-                        modes: {
-                            push: {
-                                quantity: 4,
-                            },
-                            repulse: {
-                                distance: 200,
-                                duration: 0.4,
-                            },
-                        },
-                    },
-                    particles: {
-                        color: {
-                            value: "#ffffff",
-                        },
-                        move: {
-                            direction: "none",
+        <Particles
+            id="tsparticles"
+            particlesInit={particlesInit}
+            particlesLoaded={particlesLoaded}
+            options={{
+                fullScreen: {
+                    enable: false,
+                    zIndex: -1,
+                },
+                fpsLimit: 120,
+                interactivity: {
+                    events: {
+                        resize: {
                             enable: true,
-                            outModes: {
-                                default: "bounce",
-                            },
-                            random: false,
-                            speed: 2,
-                            straight: false,
-                        },
-                        number: {
-                            density: {
-                                enable: true,
-                                width : 800,
-                                height : 800,
-                            },
-                            value: 80,
-                        },
-                        opacity: {
-                            value: 0.5,
-                        },
-                        shape: {
-                            type: "circle",
-                        },
-                        size: {
-                            value: { min: 0.7, max: 3 },
                         },
                     },
-                    detectRetina: true,
-                }}
-            />
-        </>
-    )
-}
+                },
+                particles: {
+                    color: {
+                        value: "#ffffff",
+                    },
+                    move: {
+                        enable: true,
+                        speed: 2,
+                        outModes: {
+                            default: "bounce",
+                        },
+                    },
+                    number: {
+                        density: {
+                            enable: true,
+                            width: 800,
+                            height: 800,
+                        },
+                        value: 80,
+                    },
+                    opacity: {
+                        value: 0.5,
+                    },
+                    shape: {
+                        type: "circle",
+                    },
+                    size: {
+                        value: { min: 0.7, max: 3 },
+                    },
+                },
+                detectRetina: true,
+            }}
+        />
+    );
+};
 
-export default ParticleEffect
+export default ParticleEffect;
