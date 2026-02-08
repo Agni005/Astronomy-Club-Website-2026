@@ -3,7 +3,7 @@ import Particles from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 
 
-const ParticleEffect = () => {
+const ParticleEffect: React.FC= () => {
     const particlesInit = useCallback(async engine => {
         console.log(engine);
         await loadSlim(engine);
