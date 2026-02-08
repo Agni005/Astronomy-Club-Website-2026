@@ -10,7 +10,7 @@ const ParticleEffect: React.FC = () => {
         await loadSlim(engine);
     }, []);
 
-    const particlesLoaded = useCallback(async (container:Container) => {
+    const particlesLoaded = useCallback(async (container?:Container) => {
         await console.log(container);
     }, []);
     return (
