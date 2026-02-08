@@ -15,8 +15,8 @@ const ParticleEffect: React.FC = () => {
     return (
         <Particles
             id="tsparticles"
-            particlesInit={particlesInit}
-            particlesLoaded={particlesLoaded}
+            init={particlesInit}
+            loaded={particlesLoaded}
             options={{
                 fullScreen: {
                     enable: false,
